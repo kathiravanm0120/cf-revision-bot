@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Restore problem database
+      - name: Restore database
         uses: actions/cache@v4
         with:
           path: /tmp/solved_problems.json
