@@ -1,0 +1,187 @@
+{
+    "69A": {
+        "name": "Young Physicist",
+        "rating": 1000,
+        "date": "2026-05-31"
+    },
+    "474B": {
+        "name": "Worms",
+        "rating": 1200,
+        "date": "2026-05-29"
+    },
+    "227B": {
+        "name": "Effective Approach",
+        "rating": 1100,
+        "date": "2026-05-27"
+    },
+    "25A": {
+        "name": "IQ test",
+        "rating": 1300,
+        "date": "2026-05-26"
+    },
+    "160A": {
+        "name": "Twins",
+        "rating": 900,
+        "date": "2026-05-26"
+    },
+    "443A": {
+        "name": "Anton and Letters",
+        "rating": 800,
+        "date": "2026-05-22"
+    },
+    "348A": {
+        "name": "Mafia",
+        "rating": 1600,
+        "date": "2026-05-09"
+    },
+    "350C": {
+        "name": "Bombs",
+        "rating": 1600,
+        "date": "2026-05-09"
+    },
+    "977A": {
+        "name": "Wrong Subtraction",
+        "rating": 800,
+        "date": "2026-05-03"
+    },
+    "791A": {
+        "name": "Bear and Big Brother",
+        "rating": 800,
+        "date": "2026-05-03"
+    },
+    "266A": {
+        "name": "Stones on the Table",
+        "rating": 800,
+        "date": "2026-05-03"
+    },
+    "2117E": {
+        "name": "Lost Soul",
+        "rating": 1600,
+        "date": "2026-05-02"
+    },
+    "112A": {
+        "name": "Petya and Strings",
+        "rating": 800,
+        "date": "2026-05-02"
+    },
+    "617A": {
+        "name": "Elephant",
+        "rating": 800,
+        "date": "2026-05-02"
+    },
+    "281A": {
+        "name": "Word Capitalization",
+        "rating": 800,
+        "date": "2026-05-01"
+    },
+    "339A": {
+        "name": "Helpful Maths",
+        "rating": 800,
+        "date": "2026-05-01"
+    },
+    "263A": {
+        "name": "Beautiful Matrix",
+        "rating": 800,
+        "date": "2026-05-01"
+    },
+    "50A": {
+        "name": "Domino piling",
+        "rating": 800,
+        "date": "2026-05-01"
+    },
+    "158A": {
+        "name": "Next Round",
+        "rating": 800,
+        "date": "2026-05-01"
+    },
+    "231A": {
+        "name": "Team",
+        "rating": 800,
+        "date": "2026-05-01"
+    },
+    "71A": {
+        "name": "Way Too Long Words",
+        "rating": 800,
+        "date": "2026-05-01"
+    },
+    "4A": {
+        "name": "Watermelon",
+        "rating": 800,
+        "date": "2026-05-01"
+    },
+    "2227C": {
+        "name": "Snowfall",
+        "rating": 800,
+        "date": "2026-04-30"
+    },
+    "2227B": {
+        "name": "Party Monster",
+        "rating": 800,
+        "date": "2026-04-30"
+    },
+    "2227A": {
+        "name": "Koshary",
+        "rating": 800,
+        "date": "2026-04-30"
+    },
+    "2218C": {
+        "name": "The 67th Permutation Problem",
+        "rating": 800,
+        "date": "2026-04-18"
+    },
+    "2218B": {
+        "name": "The 67th 6-7 Integer Problem",
+        "rating": 800,
+        "date": "2026-04-05"
+    },
+    "2218A": {
+        "name": "The 67th Integer Problem",
+        "rating": 800,
+        "date": "2026-04-05"
+    },
+    "2211A": {
+        "name": "Antimedian Deletion",
+        "rating": 800,
+        "date": "2026-03-28"
+    },
+    "2154A": {
+        "name": "Notelock",
+        "rating": 800,
+        "date": "2026-03-20"
+    },
+    "2178A": {
+        "name": "Yes or Yes",
+        "rating": 800,
+        "date": "2026-03-17"
+    },
+    "2200C": {
+        "name": "Specialty String",
+        "rating": 900,
+        "date": "2026-02-27"
+    },
+    "2200A": {
+        "name": "Eating Game",
+        "rating": 800,
+        "date": "2026-02-27"
+    },
+    "2171A": {
+        "name": "Shizuku Hoshikawa and Farm Legs",
+        "rating": 800,
+        "date": "2026-01-22"
+    },
+    "1996A": {
+        "name": "Legs",
+        "rating": 800,
+        "date": "2026-01-22"
+    },
+    "2176A": {
+        "name": "Operations with Inversions",
+        "rating": 800,
+        "date": "2026-01-21"
+    },
+    "2155A": {
+        "name": "El fucho",
+        "rating": 800,
+        "date": "2025-11-19"
+    }
+}
