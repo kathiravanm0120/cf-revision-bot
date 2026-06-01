@@ -2,11 +2,8 @@ name: Codeforces Reminder Bot
 
 on:
   schedule:
-    - cron: '0 4 * * *' # Daily at 9:30 AM IST
+    - cron: '0 4 * * *'
   workflow_dispatch:
-
-permissions:
-  contents: write
 
 jobs:
   run-bot:
@@ -15,8 +12,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -24,8 +19,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: |
-          pip install requests
+        run: pip install requests
 
       - name: Run bot
         env:
@@ -33,15 +27,3 @@ jobs:
           PHONE_NUMBER_ID: ${{ secrets.PHONE_NUMBER_ID }}
           WHATSAPP_TO: ${{ secrets.WHATSAPP_TO }}
         run: python main.py
-
-      - name: Commit updated database
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
-
-          git fetch origin
-          git reset --hard origin/main
-
-          git add solved_problems.json || true
-          git commit -m "Update solved problems" || true
-          git push https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git HEAD:main || true
