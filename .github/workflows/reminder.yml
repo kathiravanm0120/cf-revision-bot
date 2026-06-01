@@ -43,7 +43,13 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add solved_problems.json
-          git commit -m "Update solved problems" || echo "No changes to commit"
-          git pull --rebase origin main
-          git push origin main
+
+          # Only commit if file actually changed
+          if ! git diff --quiet solved_problems.json; then
+            git add solved_problems.json
+            git commit -m "Update solved problems"
+            git pull --rebase origin main
+            git push origin main
+          else
+            echo "No changes detected, skipping commit."
+          fi
