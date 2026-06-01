@@ -13,6 +13,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Restore problem database
+        uses: actions/cache@v4
+        with:
+          path: /tmp/solved_problems.json
+          key: cf-db-${{ github.run_id }}
+          restore-keys: |
+            cf-db-
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
