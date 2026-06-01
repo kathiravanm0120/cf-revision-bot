@@ -9,11 +9,14 @@ TOKEN = os.getenv("WHATSAPP_TOKEN")
 PHONE_NUMBER_ID = os.getenv("PHONE_NUMBER_ID")
 WHATSAPP_TO = os.getenv("WHATSAPP_TO")
 
-DB_FILE = "solved_problems.json"
+DB_FILE = "/tmp/solved_problems.json"
 
 
 def send_whatsapp_message(message):
-    url = f"https://graph.facebook.com/v22.0/{PHONE_NUMBER_ID}/messages"
+    url = (
+        f"https://graph.facebook.com/v22.0/"
+        f"{PHONE_NUMBER_ID}/messages"
+    )
 
     headers = {
         "Authorization": f"Bearer {TOKEN}",
@@ -51,37 +54,38 @@ def get_solved_problems():
 
     for submission in data["result"]:
 
-        if submission.get("verdict") == "OK":
+        if submission.get("verdict") != "OK":
+            continue
 
-            problem = submission["problem"]
+        problem = submission["problem"]
 
-            contest_id = problem.get("contestId")
-            index = problem.get("index")
+        contest_id = problem.get("contestId")
+        index = problem.get("index")
 
-            if not contest_id or not index:
-                continue
+        if not contest_id or not index:
+            continue
 
-            key = f"{contest_id}{index}"
+        key = f"{contest_id}{index}"
 
-            if key in solved:
-                continue
+        if key in solved:
+            continue
 
-            solved[key] = {
-                "name": problem.get(
-                    "name",
-                    "Unknown"
-                ),
-                "rating": problem.get(
-                    "rating",
-                    "N/A"
-                ),
-                "date":
-                datetime.utcfromtimestamp(
-                    submission[
-                        "creationTimeSeconds"
-                    ]
-                ).strftime("%Y-%m-%d")
-            }
+        solved[key] = {
+            "name": problem.get(
+                "name",
+                "Unknown"
+            ),
+            "rating": problem.get(
+                "rating",
+                "N/A"
+            ),
+            "date":
+            datetime.utcfromtimestamp(
+                submission[
+                    "creationTimeSeconds"
+                ]
+            ).strftime("%Y-%m-%d")
+        }
 
     return solved
 
@@ -131,9 +135,8 @@ def check_revision():
                 f"Name: {value['name']}\n"
                 f"Rating: {value['rating']}\n\n"
                 "Solved 2 days ago.\n"
-                "Try solving again "
-                "without seeing "
-                "your old code 💪"
+                "Try solving again without "
+                "seeing your old code 💪"
             )
 
             send_whatsapp_message(
