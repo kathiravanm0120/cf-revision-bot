@@ -2,7 +2,7 @@ name: Codeforces Reminder Bot
 
 on:
   schedule:
-    - cron: '0 4 * * *'
+    - cron: '0 4 * * *'   # Runs daily at 04:00 UTC
   workflow_dispatch:
 
 jobs:
@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0   # Important: fetch full history so rebase works
 
       - name: Restore database
         uses: actions/cache@v4
@@ -35,3 +38,12 @@ jobs:
           PHONE_NUMBER_ID: ${{ secrets.PHONE_NUMBER_ID }}
           WHATSAPP_TO: ${{ secrets.WHATSAPP_TO }}
         run: python main.py
+
+      - name: Commit updated database
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add solved_problems.json
+          git commit -m "Update solved problems" || echo "No changes to commit"
+          git pull --rebase origin main
+          git push origin main
